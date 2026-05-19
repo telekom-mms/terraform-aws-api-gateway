@@ -6,8 +6,9 @@ locals {
   api_key_name    = var.api_key_name != "" ? var.api_key_name : "${local.name_prefix}-api-key"
 
   common_tags = merge(var.tags, {
-    "Project"     = var.project_name
-    "Environment" = var.environment
-    "ManagedBy"   = "Terraform"
+    "Project"       = var.project_name
+    "Environment"   = var.environment
+    "ManagedBy"     = "Terraform"
+    "PSA-Compliant" = "true"
   })
 }

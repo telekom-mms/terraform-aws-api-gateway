@@ -1,16 +1,6 @@
 // main.tf
 # Written by Marc Straubinger - Overhauled for Security-First Best Practices
 
-terraform {
-  required_version = ">= 1.0"
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
-
 # CloudWatch Log Group for API Gateway Access Logs
 # PSA Compliance: Req 15 (Logging is mandatory)
 resource "aws_cloudwatch_log_group" "api_gateway_logs" {
