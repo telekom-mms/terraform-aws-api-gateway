@@ -49,7 +49,7 @@ resource "aws_iam_role_policy_attachment" "api_gateway_cloudwatch_policy" {
 # API Gateway Account configuration
 # Note: This is global per region/account, might cause conflicts if used in multiple modules
 resource "aws_api_gateway_account" "this" {
-  count               = var.enable_logging ? 1 : 0
+  count               = var.enable_logging && var.manage_api_gateway_account ? 1 : 0
   cloudwatch_role_arn = aws_iam_role.api_gateway_cloudwatch_role[0].arn
 }
 

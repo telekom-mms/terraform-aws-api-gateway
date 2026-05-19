@@ -57,6 +57,12 @@ variable "enable_logging" {
   default     = true # PSA Req 15
 }
 
+variable "manage_api_gateway_account" {
+  description = "Whether this module should manage the global API Gateway account settings. Set to false if another module or resource already manages this."
+  type        = bool
+  default     = true
+}
+
 variable "log_retention_days" {
   description = "CloudWatch log retention in days"
   type        = number
@@ -195,7 +201,7 @@ variable "kms_key_arn" {
 variable "disable_execute_api_endpoint" {
   description = "Disable the default execute-api endpoint (forces use of custom domain)"
   type        = bool
-  default     = false # Set to true for higher security if using custom domains
+  default     = true
 }
 
 variable "mtls_enabled" {

@@ -5,7 +5,8 @@ provider "aws" {
 }
 
 module "api_gateway" {
-  source = "registry.terraform.io/telekom-mms/api-gateway/aws"
+  source  = "registry.terraform.io/telekom-mms/api-gateway/aws"
+  version = "~> 1.0"
 
   name_prefix = "api-gatewaymms"
 
